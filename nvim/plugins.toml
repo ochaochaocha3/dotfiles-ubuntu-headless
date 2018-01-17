@@ -104,6 +104,7 @@ hook_add = '''
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
 hook_add = '''
+  let g:clang_format#command = '/usr/bin/clang-format-5.0'
   let g:clang_format#code_style = 'llvm'
   let g:clang_format#style_options = {
     \ 'AllowShortFunctionsOnASingleLine': 'None',
