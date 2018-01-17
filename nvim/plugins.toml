@@ -33,7 +33,7 @@ repo = 'tomasr/molokai'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'vim-jp/cpp-vim'
+repo = 'vim-jp/vim-cpp'
 on_ft = 'cpp'
 
 [[plugins]]
@@ -74,3 +74,44 @@ on_ft = 'mediawiki'
 [[plugins]]
 repo = 'chr4/nginx.vim'
 on_ft = 'nginx'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'maralla/vim-toml-enhance'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = 'plantuml'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ['c', 'cpp']
+hook_add = '''
+  let g:deoplete#sources#clang#libclang_path = '/usr/lib/x86_64-linux-gnu/libclang-5.0.so.1'
+  let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+hook_add = '''
+  let g:clang_format#code_style = 'llvm'
+  let g:clang_format#style_options = {
+    \ 'AllowShortFunctionsOnASingleLine': 'None',
+    \ 'PointerAlignment': 'Left'}
+  autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+  autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+  nmap <Leader>C :ClangFormatAutoToggle<CR>
+'''
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
