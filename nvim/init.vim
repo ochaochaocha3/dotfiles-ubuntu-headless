@@ -46,6 +46,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set cinoptions=:0,g0,N-s,(1s,m1,j1,J1
 set backspace=indent,eol,start
 
 " 表示
